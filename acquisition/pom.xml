@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>re.apayet</groupId>
+    <artifactId>acquisition</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <properties>
+        <balance.version>0.4.0</balance.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <jnativehook.version>2.1.0</jnativehook.version>
+        <jna.platform.version>4.1.0</jna.platform.version>
+        <log4j.version>2.9.1</log4j.version>
+        <junit.version>4.11</junit.version>
+        <jackson.version>1.9.13</jackson.version>
+        <joda.time.version>2.9.9</joda.time.version>
+        <webcam-capture.version>0.3.12</webcam-capture.version>
+
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${maven.compiler.target}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna-platform</artifactId>
+            <version>${jna.platform.version}</version>
+        </dependency>
+
+        <!-- mvn install:install-file
+            -Dfile=./src/main/resources/external-jar/jnativehook-2.1.0.jar
+            -DgroupId=org.jnativehook -DartifactId=jnativehook -Dversion=2.1.0 -Dpackaging=jar
+        -->
+        <dependency>
+            <groupId>org.jnativehook</groupId>
+            <artifactId>jnativehook</artifactId>
+            <version>${jnativehook.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.sarxos/webcam-capture -->
+        <dependency>
+            <groupId>com.github.sarxos</groupId>
+            <artifactId>webcam-capture</artifactId>
+            <version>${webcam-capture.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda.time.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
